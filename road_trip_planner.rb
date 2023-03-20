@@ -150,7 +150,7 @@
 
 
         def url_request(starting_point,ending_point,transport_string)
-            url = URI("https://maps.googleapis.com/maps/api/directions/json?origin=#{starting_point}&destination=#{ending_point}#{transport_string}&key=AIzaSyAtdeaPTnS0AqkH3ePpEGOoS9qcnDjjIaE")
+            url = URI("https://maps.googleapis.com/maps/api/directions/json?origin=#{starting_point}&destination=#{ending_point}#{transport_string}&key=#{enter_the_api_key_for_directions_api}")
             https = Net::HTTP.new(url.host, url.port)
             https.use_ssl = true
             response = JSON.parse(https.request(Net::HTTP::Get.new(url)).read_body)
